@@ -1,0 +1,53 @@
+.container--title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container--left-tittle {
+  display: flex;
+  align-items: center;
+  gap:0.8rem;
+}
+
+.container--to {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.container--to a {
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.container-buttons-pagination {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.container-buttons-pagination button{
+  cursor: pointer;
+  padding-inline: 0.5rem;
+  padding-block: 0.3rem;
+  border-color: transparent;
+  font-weight: 700;
+  background-color: rgb(38, 38, 38);
+}
+
+
+.container-gifs {
+  display: flex;
+  width: 100%;
+  overflow-x: scroll;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+
+.container-gifs img{
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+  min-width: 248px;
+  height: 9rem;
+}

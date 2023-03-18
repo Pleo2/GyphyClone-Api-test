@@ -1,0 +1,39 @@
+.container-clipsSeccion {
+  position: relative;  
+  width: 100%;
+  height: auto;
+}
+
+.container-gifs-clipsSeccion {
+  display: flex;
+  width: 100%;
+  overflow-x: hidden;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.container-clips{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ 
+.container-gifs-clipsSeccion img {
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+  min-width: 248px;
+  height: 8rem;  
+}
+
+.info-clips {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-clips p {
+  margin:0;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}

@@ -1,19 +1,25 @@
 import React from 'react';
-import ListGifs from './Components/ListGifs';
+import { HashRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home/index.js'
+import Header from './components/Header';
+import SearchInput from './components/SearchInput';
+import SearchResults from './pages/SearchResults'
 import './App.css';
 
 function App() {
-  const search = ['perro', 'panda', 'rata', 'gato'];
-  let [number, addnumber] = React.useState(0);
-  const [keyboard, setKeyboard] = React.useState('mapache');
   return (
     <>
-      <button type='button' onClick={() => {
-        addnumber(number++)
-        setKeyboard(search[number])
-      }
-      }> set new keyboard</button>
-      <ListGifs keyboard={keyboard} />
+      <div className="container-app">
+        
+        <HashRouter>
+          <Header />
+          <SearchInput placeholder="Write here" />
+          <Routes>
+            <Route path='/' element={<Home />}></Route>
+            <Route path='/search/:keyboard' element={<SearchResults  />}></Route>
+          </Routes>
+        </HashRouter>
+      </div>
     </>
   );
 }

@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './app/App';
 import reportWebVitals from './reportWebVitals';
-import AppPro from './APP_Fetch-without-Render/App_pro';
+// import AppPro from './APP_Fetch-without-Render/App_pro';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
-    <AppPro />
+    {/* <AppPro /> */}
   </React.StrictMode>
 );
 
