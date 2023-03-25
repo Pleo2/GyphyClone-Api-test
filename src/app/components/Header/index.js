@@ -17,12 +17,12 @@ export default function Header() {
         </Link>
 
         <div className="container--Link">
-          <Link to="/reactions">Reactions</Link>
-          <Link to="/entertainment">Entertainment</Link>
-          <Link to="/sports">Sports</Link>
-          <Link to="/stickers">Stickers</Link>
-          <Link to="/artists">Artists</Link>
-          <Link to="/...">...</Link>
+          <Link to="/search/reactions">Reactions</Link>
+          <Link to="/search/entertainment">Entertainment</Link>
+          <Link to="/search/sports">Sports</Link>
+          <Link to="/search/stickers">Stickers</Link>
+          <Link to="/search/artists">Artists</Link>
+          <Link to="/search/random">...</Link>
         </div>
 
         <div className="container--buttons">
@@ -37,7 +37,7 @@ export default function Header() {
         <div className="container--perfil">
           <img
             className='img--perfil'
-            src="./images/avatar.png"
+            src="https://media.giphy.com/avatars/default5/80h.gif"
             alt="ojos"
           />
           <span>Pleo2</span>

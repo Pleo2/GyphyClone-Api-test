@@ -4,6 +4,9 @@ import Home from './pages/Home/index.js'
 import Header from './components/Header';
 import SearchInput from './components/SearchInput';
 import SearchResults from './pages/SearchResults'
+import Trending from './pages/Trending'
+import Artists from './pages/Artists'
+import Clips from './pages/Clips'
 import './App.css';
 
 function App() {
@@ -15,8 +18,11 @@ function App() {
           <Header />
           <SearchInput placeholder="Write here" />
           <Routes>
-            <Route path='/' element={<Home />}></Route>
-            <Route path='/search/:keyboard' element={<SearchResults  />}></Route>
+            <Route index element={<Home />}></Route>
+            <Route path='/search/:keyword' element={<SearchResults  />}></Route>
+            <Route path='/Trending' element={<Trending/>}></Route>
+            <Route path='/Artists' element={<Artists/>}></Route>
+            <Route path='/Clips' element={<Clips/>}></Route>
           </Routes>
         </HashRouter>
       </div>

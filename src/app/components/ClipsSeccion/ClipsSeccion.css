@@ -1,39 +1,97 @@
 .container-clipsSeccion {
   position: relative;  
-  width: 100%;
+  width: 1040px;
   height: auto;
 }
 
 .container-gifs-clipsSeccion {
   display: flex;
+  margin-bottom: 2rem;
   width: 100%;
-  overflow-x: hidden;
+  height: 471;
   gap: 0.5rem;
-  margin-bottom: 0.5rem;
+  justify-content: space-between;
 }
 
-.container-clips{
+.main-clip {
+  width: 740px;
+  height: auto;
+}
+
+.main-clip p {
+  font-weight: 500;
+  font-size: 17px;
+  margin: 0;
+  padding: 0;
+}
+
+.main-clip img {
+  width: 100%;
+  height: 416px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+}
+
+.container-right--seccion {
+  width: 30%;
+  height: 416px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.container-right-img--clips {
+  position: relative;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: 205px;
+}
+
+.container-right-img--clips p{
+  font-size: 17px;
+  font-weight: 500;
+  margin: 0;
+  margin-top: 0.2rem;
+  padding: 0;
+}
+
+.container-right-img--clips img {
+  width: 100%;
+  height: 161px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+}
+
+.img-2-right {
+  margin-top: 42px;
+}
+
+.container-username--clips {
+  margin-top: 0.3rem;
+  display: flex;
   align-items: center;
 }
- 
-.container-gifs-clipsSeccion img {
-  margin-bottom: 0.5rem;
-  border-radius: 5px;
-  min-width: 248px;
-  height: 8rem;  
+
+.container-username--clips p{
+  font-size: 14px;
+  font-weight: 400;
 }
 
-.info-clips {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.container-username--clips .logo-artist-clips {
+  width: 25px;
+  height: 25px;
+  border-radius: 0;
+  margin-right: 8px;
 }
 
-.info-clips p {
-  margin:0;
-  font-weight: 500;
-  text-align: center;
-  margin-bottom: 0.5rem;
+.container-username--clips .logo-artist-verifed {
+  width: 15px;
+  height: 15px;
+  border-radius: 0;
+  margin-left: 4px;
+  margin-top: 0.3rem;
 }

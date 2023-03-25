@@ -9,12 +9,12 @@ export default function useFetch(API_URL) {
   useEffect(() => {
     const abortController = new AbortController();
     setController(abortController);
-    fetch(API_URL, { signal: abortController.signal })
-      .then((response) => response.json())
-      .then((json) => {
-        const { data } = json;
-        setData(data)
-      })
+      fetch(API_URL, { signal: abortController.signal })
+        .then((response) => response.json())
+        .then((json) => {
+          const { data } = json;
+          setData(data)
+        })
       .catch((error) => {
         if (error.name === "AbortError") {
           console.log("Cancelled request");
@@ -34,6 +34,6 @@ export default function useFetch(API_URL) {
     }
   };
 
-  return { data, loading, error, handleCancelRequest };
+  return { data, setData, loading, error, handleCancelRequest };
 }
 

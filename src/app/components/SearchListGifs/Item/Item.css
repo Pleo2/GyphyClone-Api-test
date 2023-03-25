@@ -1,0 +1,10 @@
+.item-list-gifs {
+  cursor: pointer;
+  background-color: aqua;
+  width: 100%;
+  min-height: 150px;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+  background-color: skyblue;
+}
+

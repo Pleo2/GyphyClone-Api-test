@@ -1,30 +1,33 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 import './TitleSeccions.css';
 
-export default function TitleSeccions({pathSvg, title}) {
+export default function TitleSeccions({ pathSvg, title, toName, scroll }) {
+
   return (
     <>
-    <div className="container--title">
-          <div className="container--left-tittle">
+      <div className="container--title">
+        <div className="container--left-tittle">
+          {pathSvg && (
             <img
               src={`/images/${pathSvg}`}
               alt="trending-logo"
             />
-            <h2 className="tittle-artist">{title}</h2>
-          </div>
+          )}
+          <h2 className="title">{title}</h2>
+        </div>
+        {toName && (
           <div className="container--to">
-            <div className="container-buttons-pagination">
-              <button>{'<'}</button>
-              <button>{'>'}</button>
-            </div>
-            <a
-              href="/"
+            
+            <Link
+              to={`/${title}`}
               className="link-more-gifs"
             >
-              {`All ${title} GIFs >`}
-            </a>
+              {`All ${toName}>`}
+            </Link>
           </div>
-        </div>
+        )}
+      </div>
     </>
-  )
+  );
 }

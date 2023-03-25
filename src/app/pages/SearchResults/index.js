@@ -1,12 +1,12 @@
 import React from 'react';
-import HomePageBanner from '../../components/HomePageBanner';
-import ListGifs from '../../components/ListGifs';
+import HomePageBanner from 'app/components/HomePageBanner';
+import SearchListGifs from 'app/components/SearchListGifs';
 
 export default function SearchResults() {
   return (
     <>
       <HomePageBanner />
-      <ListGifs />
+      <SearchListGifs />
     </>
   );
 }
