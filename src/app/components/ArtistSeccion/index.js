@@ -3,12 +3,9 @@ import Spiner from '../Spiner';
 import ButtonsSliders from '../ButtonsSliders';
 import TitleSeccions from '../TitleSeccions';
 import './ArtistSeccion.css';
+import ArtistItem from './ArtistItem';
 
-export default function ArtistSeccion({
-  data,
-  loading,
-  error,
-}) {
+export default function ArtistSeccion({ data, loading, error }) {
   const [sliderIndexArtist, setSliderIndexArtist] = useState(0);
   const lengthData = data.length;
   return (
@@ -22,52 +19,31 @@ export default function ArtistSeccion({
             title={'Artists'}
             toName={'GIPHY Artists'}
           />
+
           <ButtonsSliders
+            key={'button-Artist'}
             sliderIndex={sliderIndexArtist}
             setSliderIndex={setSliderIndexArtist}
           />
-
-          <div 
+          <div
             className="container-gifs-artistSeccion"
             style={{
               transform: `translateX(calc(${sliderIndexArtist} * -100%))`,
               transition: 'transform 550ms ease-in-out',
             }}
-            >
+          >
             {data
               ?.slice(25, lengthData)
               ?.filter((item) => item?.user?.is_verified)
               ?.map((artist, index) => {
                 return (
-                  <div
-                    key={`${index}${artist?.id}`}
-                    className="container-artist"
-                  >
-                    <img
-                      key={`${artist?.id}`}
-                      src={artist?.images?.original?.url}
-                      className="gif-artist"
-                      alt="trending-img"
-                    />
-                    <img
-                      key={`${artist?.id}${artist?.username}`}
-                      src={artist?.user?.avatar_url}
-                      className="profile-artist"
-                      alt="profile-artist"
-                    />
-                    <div className="info-artist">
-                      <p className="user-displayname">
-                        {artist?.user?.display_name}
-                      </p>
-                      <div className="container-username">
-                        <p className="username-artistSeccion">{`@${artist?.username}`}</p>
-                        <img
-                          src={'/images/verified.svg'}
-                          alt="verfied-logo"
-                        />
-                      </div>
-                    </div>
-                  </div>
+                  <ArtistItem
+                    id={artist?.id}
+                    key={artist?.id}
+                    sourceMainImg={artist?.images?.original?.url}
+                    sourceArtistAvatar={artist?.user?.avatar_url}
+                    userName={artist?.username}
+                  />
                 );
               })}
           </div>

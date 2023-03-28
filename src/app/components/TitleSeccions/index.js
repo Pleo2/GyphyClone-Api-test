@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './TitleSeccions.css';
 
-export default function TitleSeccions({ pathSvg, title, toName, scroll }) {
+function TitleSeccions({ pathSvg, title, toName, scroll }) {
 
   return (
     <>
@@ -31,3 +31,5 @@ export default function TitleSeccions({ pathSvg, title, toName, scroll }) {
     </>
   );
 }
+
+export default React.memo(TitleSeccions);

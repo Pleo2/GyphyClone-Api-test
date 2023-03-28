@@ -3,6 +3,7 @@ import Spiner from '../Spiner';
 import TitleSeccions from '../TitleSeccions';
 import ButtonsSliders from '../ButtonsSliders/index';
 import './TrendingSeccion.css';
+import TrendingImg from './TrendingImg';
 
 export default function TrendingSeccion({ data, loading, error }) {
   const [sliderIndex, setSliderIndex] = useState(0);
@@ -21,6 +22,7 @@ export default function TrendingSeccion({ data, loading, error }) {
             toName={'The GIFs'}
           />
           <ButtonsSliders
+            key={'button-trending'}
             sliderIndex={sliderIndex}
             setSliderIndex={setSliderIndex}
           />
@@ -33,11 +35,13 @@ export default function TrendingSeccion({ data, loading, error }) {
           >
             {data?.slice(0, 25)?.map((item, index) => {
               return (
-                <img
-                  key={index}
+                <TrendingImg
+                  key={item?.id}
+                  id={item?.id}
+                  index={index}
                   className="gif-trending"
-                  src={item?.images?.preview_webp?.url}
-                  alt={item?.title}
+                  source={item?.images?.preview_webp?.url}
+                  title={item?.title}
                 />
               );
             })}

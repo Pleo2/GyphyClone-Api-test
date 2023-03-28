@@ -1,0 +1,11 @@
+import { API_KEY, API_URL } from "app/services/config";
+import useFetch from "./useFetch";
+
+export default function useGetByIdGifs({GifsId}) {  
+  const { data, loading, error } = useFetch(`${API_URL}/gifs/${GifsId}?api_key=${API_KEY}`);
+  return {
+    data, 
+    loading,
+    error
+  }
+}

@@ -1,0 +1,9 @@
+.gif-trending {
+  position: relative;
+  cursor: pointer;
+  z-index: 20;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+  height: 9rem;
+  opacity: 1;
+}

@@ -20,6 +20,7 @@
 }
 
 .gif-artist {
+  cursor: pointer;
   border-radius: 5px;
   min-width: 20rem;
   height: 14rem;

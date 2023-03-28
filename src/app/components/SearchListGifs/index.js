@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import useSearchGifs from 'app/hooks/useSearchGifs';
 import Spiner from '../Spiner';
-import Item from './Item/Item.js';
+import Item from './Item/index.js';
 import './SearchListGifs.css';
 import useNearScreen from 'app/hooks/useNearScreen';
 import debounce from 'lodash.debounce';
@@ -10,12 +10,14 @@ import debounce from 'lodash.debounce';
 export default function SearchListGifs() {
   const { keyword } = useParams();
   const { gifs, loading, error, setPage } = useSearchGifs({ keyword });
+
   const externalRef = useRef();
   const { isNearScreen } = useNearScreen({
     externalRef: loading ? null : externalRef,
     once: false,
   });
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const debounceHandleNextPage = useCallback(
     debounce(() => setPage((prevPage) => prevPage + 1), 200),
     [setPage],
@@ -35,6 +37,7 @@ export default function SearchListGifs() {
           gifs?.map((gif, index) => (
             <Item
               dataSrc={gif?.url}
+              id={gif?.id}
               key={gif?.id + index}
               gif={gif?.title}
             />

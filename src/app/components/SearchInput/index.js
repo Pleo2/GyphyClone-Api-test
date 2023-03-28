@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './SearchInput.css';
 
@@ -7,13 +7,14 @@ export default function SearchInput({ placeholder }) {
 
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = useCallback((event) => {
     navigate(`/search/${keyboard}`);
     event.preventDefault();
-  };
-  const handleChange = (event) => {
+  }, [navigate, keyboard])
+
+  const handleChange = useCallback((event) => {
     setKeyboard(event.target.value);
-  };
+  }, [setKeyboard])
 
   return (
     <>
