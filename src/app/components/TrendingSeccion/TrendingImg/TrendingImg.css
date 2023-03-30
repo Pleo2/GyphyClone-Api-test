@@ -7,3 +7,19 @@
   height: 9rem;
   opacity: 1;
 }
+
+.Gifs-trending:nth-child(5n + 1) .gif-trending {
+  background-color: var(--brand-color_1);
+}
+.Gifs-trending:nth-child(5n + 2) .gif-trending {
+  background-color: var(--brand-color_2);
+}
+.Gifs-trending:nth-child(5n + 3) .gif-trending {
+  background-color: var(--brand-color_3);
+}
+.Gifs-trending:nth-child(5n + 4) .gif-trending {
+  background-color: var(--brand-color_4);
+}
+.Gifs-trending:nth-child(5n + 5) .gif-trending {
+  background-color: var(--brand-color_5);
+}

@@ -1,26 +1,23 @@
-import React, { useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './TrendingImg.css';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import './TrendingImg.css'
 
-
-function TrendingImg({source, title, id}) {
-  const navigate = useNavigate();
-
-  const handleClick = useCallback(() => {
-    navigate(`/details/${id}`)
-  }, [id, navigate])
-
+function TrendingImg ({ source, title, id }) {
   return (
-    <div>
-      <img
-        onClick={handleClick}
-        id={id}
-        className="gif-trending"
-        src={source}
-        alt={title}
-      />
+    <div className="Gifs-trending">
+      <Link
+        to={`/details/${id}`}
+        className="Gif-link"
+      >
+        <img
+          className="gif-trending"
+          id={id}
+          src={source}
+          alt={title}
+        />
+      </Link>
     </div>
-  );
+  )
 }
 
-export default React.memo(TrendingImg);
+export default React.memo(TrendingImg)

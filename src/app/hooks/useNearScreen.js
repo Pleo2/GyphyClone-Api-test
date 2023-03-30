@@ -26,12 +26,11 @@ export default function useNearScreen ({ distance = '50px', externalRef, once = 
       observer = new IntersectionObserver(onChange, {
         rootMargin: distance
       })
-  
       if (element) observer.observe(element)
     })
 
     return () => observer
   })
 
-  return {isNearScreen, fromRef}
+  return { isNearScreen, fromRef }
 }

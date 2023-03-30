@@ -1,20 +1,26 @@
-import React, { useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './SearchInput.css';
+import React, { useCallback } from 'react'
+import { useNavigate } from 'react-router-dom'
+import './SearchInput.css'
 
-export default function SearchInput({ placeholder }) {
-  const [keyboard, setKeyboard] = React.useState('');
+export default function SearchInput ({ placeholder }) {
+  const [keyboard, setKeyboard] = React.useState('')
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
-  const handleSubmit = useCallback((event) => {
-    navigate(`/search/${keyboard}`);
-    event.preventDefault();
-  }, [navigate, keyboard])
+  const handleSubmit = useCallback(
+    event => {
+      navigate(`/search/${keyboard}`)
+      event.preventDefault()
+    },
+    [navigate, keyboard]
+  )
 
-  const handleChange = useCallback((event) => {
-    setKeyboard(event.target.value);
-  }, [setKeyboard])
+  const handleChange = useCallback(
+    event => {
+      setKeyboard(event.target.value)
+    },
+    [setKeyboard]
+  )
 
   return (
     <>
@@ -37,5 +43,5 @@ export default function SearchInput({ placeholder }) {
         </button>
       </form>
     </>
-  );
+  )
 }

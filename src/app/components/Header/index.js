@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './Header.css';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import './Header.css'
 
-export default function Header() {
+export default function Header () {
   return (
     <header>
       <nav>
@@ -26,17 +26,17 @@ export default function Header() {
         </div>
 
         <div className="container--buttons">
-          <button className='button-up'> 
+          <button className="button-up">
             <Link to="/upload">Upload</Link>
           </button>
-          <button className='button-create'>
+          <button className="button-create">
             <Link to="/create">Create</Link>
           </button>
         </div>
 
         <div className="container--perfil">
           <img
-            className='img--perfil'
+            className="img--perfil"
             src="https://media.giphy.com/avatars/default5/80h.gif"
             alt="ojos"
           />
@@ -45,5 +45,5 @@ export default function Header() {
         </div>
       </nav>
     </header>
-  );
+  )
 }

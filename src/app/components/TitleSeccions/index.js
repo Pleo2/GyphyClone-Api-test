@@ -1,9 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './TitleSeccions.css';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import './TitleSeccions.css'
 
-function TitleSeccions({ pathSvg, title, toName, scroll }) {
-
+function TitleSeccions ({ pathSvg, title, toName, scroll }) {
   return (
     <>
       <div className="container--title">
@@ -18,7 +17,6 @@ function TitleSeccions({ pathSvg, title, toName, scroll }) {
         </div>
         {toName && (
           <div className="container--to">
-            
             <Link
               to={`/${title}`}
               className="link-more-gifs"
@@ -29,7 +27,7 @@ function TitleSeccions({ pathSvg, title, toName, scroll }) {
         )}
       </div>
     </>
-  );
+  )
 }
 
-export default React.memo(TitleSeccions);
+export default React.memo(TitleSeccions)

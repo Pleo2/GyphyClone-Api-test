@@ -1,11 +1,27 @@
 .item-list-gifs {
+  padding: 0;
   cursor: pointer;
-  background-color: rgb(138, 74, 242);
   width: 100%;
   min-height: 150px;
   margin-bottom: 0.5rem;
   border-radius: 5px;
-  object-fit: cover;
   object-position: center;
+  object-fit: fill;
+}
+
+.gif:nth-child(5n + 1) img {
+  background-color: var(--brand-color_1);
+}
+.gif:nth-child(5n + 2) img {
+  background-color: var(--brand-color_2);
+}
+.gif:nth-child(5n + 3) img {
+  background-color: var(--brand-color_3);
+}
+.gif:nth-child(5n + 4) img {
+  background-color: var(--brand-color_4);
+}
+.gif:nth-child(5n + 5) img {
+  background-color: var(--brand-color_5);
 }
 

@@ -1,24 +1,25 @@
-import React, { useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Item.css';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-function Item({ gif, dataSrc, id }) {
-  const navigate = useNavigate();
+import './Item.css'
 
-  const handleClick = useCallback(() => {
-    navigate(`/details/${id}`)
-  }, [navigate, id]);
-
+function Item ({ gif, dataSrc, id }) {
   return (
     <>
-      <img
-        onClick={handleClick}
-        className="item-list-gifs"
-        src={dataSrc}
-        alt={gif}
-      />
+      <div className="gif">
+        <Link
+          to={`/details/${id}`}
+          className="Gif-link"
+        >
+          <img
+            className="item-list-gifs"
+            src={dataSrc}
+            alt={gif}
+          />
+        </Link>
+      </div>
     </>
-  );
+  )
 }
 
-export default React.memo(Item);
+export default React.memo(Item)

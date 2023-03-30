@@ -1,10 +1,9 @@
-import React from 'react';
-import TrendingSeccion from 'app/components/TrendingSeccion';
-import ArtistSeccion from 'app/components/ArtistSeccion';
-import useGetTrending from 'app/hooks/useGetTrending';
+import TrendingSeccion from 'app/components/TrendingSeccion'
+import ArtistSeccion from 'app/components/ArtistSeccion'
+import useGetTrending from 'app/hooks/useGetTrending'
 
-export default function MainSeccion() {
-  const { data, loading, error, handleCancelRequest } = useGetTrending();
+export default function MainSeccion () {
+  const { data, loading, error, handleCancelRequest } = useGetTrending()
   return (
     <>
       <TrendingSeccion
@@ -21,5 +20,5 @@ export default function MainSeccion() {
         handleCancelRequest={handleCancelRequest}
       />
     </>
-  );
+  )
 }

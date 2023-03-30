@@ -1,53 +1,56 @@
-import { useState } from 'react';
-import Spiner from '../Spiner';
-import TitleSeccions from '../TitleSeccions';
-import ButtonsSliders from '../ButtonsSliders/index';
-import './TrendingSeccion.css';
-import TrendingImg from './TrendingImg';
+import { useState } from 'react'
+import Spinner from '../Spinner'
+import TitleSeccions from '../TitleSeccions'
+import ButtonsSliders from '../ButtonsSliders/index'
+import './TrendingSeccion.css'
+import TrendingImg from './TrendingImg'
 
-export default function TrendingSeccion({ data, loading, error }) {
-  const [sliderIndex, setSliderIndex] = useState(0);
+export default function TrendingSeccion ({ data, loading, error }) {
+  const [sliderIndex, setSliderIndex] = useState(0)
   return (
     <>
-      {loading && !error ? (
-        <Spiner />
-      ) : (
-        <section
-          className="container-trendingSeccion"
-          key={'trending-seccion'}
+      <section
+        className="container-trendingSeccion"
+        key={'trending-seccion'}
+      >
+        <TitleSeccions
+          pathSvg={'/trending.svg'}
+          title={'Trending'}
+          toName={'The GIFs'}
+        />
+        <ButtonsSliders
+          key={'button-trending'}
+          sliderIndex={sliderIndex}
+          setSliderIndex={setSliderIndex}
+        />
+        <div
+          className="container-gifs-trendingSeccion"
+          style={{
+            transform: `translateX(calc(${sliderIndex} * -100%))`,
+            transition: 'transform 550ms ease-in-out'
+          }}
         >
-          <TitleSeccions
-            pathSvg={'/trending.svg'}
-            title={'Trending'}
-            toName={'The GIFs'}
-          />
-          <ButtonsSliders
-            key={'button-trending'}
-            sliderIndex={sliderIndex}
-            setSliderIndex={setSliderIndex}
-          />
-          <div
-            className="container-gifs-trendingSeccion"
-            style={{
-              transform: `translateX(calc(${sliderIndex} * -100%))`,
-              transition: 'transform 550ms ease-in-out',
-            }}
-          >
-            {data?.slice(0, 25)?.map((item, index) => {
-              return (
-                <TrendingImg
-                  key={item?.id}
-                  id={item?.id}
-                  index={index}
-                  className="gif-trending"
-                  source={item?.images?.preview_webp?.url}
-                  title={item?.title}
-                />
-              );
-            })}
-          </div>
-        </section>
-      )}
+          {loading
+            ? (
+            <Spinner />
+              )
+            : (
+                data?.slice(0, 25)?.map((item, index) => {
+                  return (
+                    <TrendingImg
+                      key={item?.id}
+                      id={item?.id}
+                      index={index}
+                      className="gif-trending"
+                      source={item?.images?.preview_webp?.url}
+                      title={item?.title}
+                    />
+                  )
+                })
+              )
+          }
+        </div>
+      </section>
     </>
-  );
+  )
 }
