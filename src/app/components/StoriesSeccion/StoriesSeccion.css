@@ -1,5 +1,23 @@
+:root {
+  --gridList-column: 251px;
+  --gridList-rows: 300px;
+  --gridList-gap: 0.5rem;
+}
+
 .container-storiesSeccion {
   position: relative;  
   width: 100%;
-  height: auto;
+  margin-bottom: 1rem;
+}
+
+.container-stories {
+  position: relative;
+  width: 1040px;  
+  min-height: 700px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--gridList-column), 1fr));
+  grid-template-rows: auto;
+  grid-auto-flow: row dense;
+  align-items: center;
+  gap: var(--gridList-gap);
 }

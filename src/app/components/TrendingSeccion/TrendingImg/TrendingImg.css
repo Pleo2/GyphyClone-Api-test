@@ -4,6 +4,8 @@
   z-index: 20;
   margin-bottom: 0.5rem;
   border-radius: 5px;
+  min-width: 120px;
+  min-height: 9rem;
   height: 9rem;
   opacity: 1;
 }

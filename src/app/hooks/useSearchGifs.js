@@ -16,7 +16,7 @@ export default function useGetGifs ({ keyword }) {
       getGifs({ keyword })
         .then(gifs => {
           setGifs(gifs)
-          // guardamos la keyword en el localStorage
+          // look the last search in a new feacture, status:pending...
           localStorage.setItem('lastKeyword', keyword)
         })
         .catch(error => {
@@ -34,7 +34,7 @@ export default function useGetGifs ({ keyword }) {
   useEffect(() => {
     if (page === INITIAL_PAGE) return
     setLoadingNextPage(true)
-    getGifs({ limit: 7, keyword, page })
+    getGifs({ limit: 25, keyword, page })
       .then(nextGifs => {
         setGifs(preGifs => preGifs.concat(nextGifs))
       })

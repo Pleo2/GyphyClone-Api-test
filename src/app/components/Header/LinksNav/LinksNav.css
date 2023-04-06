@@ -1,0 +1,23 @@
+.container--Link {
+  display: flex;
+  align-items: flex-start;
+  height: 59%;
+  background: linear-gradient(
+    90deg,
+    #1900ff 0%,
+    rgb(167, 109, 238) 70%,
+    rgb(250, 26, 41) 100%
+  );
+}
+
+.container--Link a{
+  background-color: #000000;
+  text-decoration: none;
+  padding-block: 0.25rem;
+  padding-inline: 1rem;
+  transition: background 300ms ease-in-out;
+}
+
+.container--Link a:hover {
+  background: none;
+}

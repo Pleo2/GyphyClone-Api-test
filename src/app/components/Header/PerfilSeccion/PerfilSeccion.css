@@ -1,0 +1,14 @@
+.container--perfil {
+  cursor: pointer;
+  background-color: rgb(38, 38, 38);
+  padding-right: 0.5rem;
+  width: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 59%;
+}
+
+.img--perfil {
+  height: 100%;
+}

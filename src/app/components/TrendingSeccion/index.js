@@ -7,6 +7,7 @@ import TrendingImg from './TrendingImg'
 
 export default function TrendingSeccion ({ data, loading, error }) {
   const [sliderIndex, setSliderIndex] = useState(0)
+
   return (
     <>
       <section
@@ -29,22 +30,23 @@ export default function TrendingSeccion ({ data, loading, error }) {
             transform: `translateX(calc(${sliderIndex} * -100%))`,
             transition: 'transform 550ms ease-in-out'
           }}
-        >
-          {loading
+          >
+          {(loading && !error)
             ? (
-            <Spinner />
+              <Spinner />
               )
             : (
+                // TODO: create filter for repeat items
                 data?.slice(0, 25)?.map((item, index) => {
                   return (
                     <TrendingImg
-                      key={item?.id}
+                      key={`${item?.id}${index}`}
                       id={item?.id}
                       index={index}
                       className="gif-trending"
-                      source={item?.images?.preview_webp?.url}
+                      source={item?.url}
                       title={item?.title}
-                    />
+                      />
                   )
                 })
               )

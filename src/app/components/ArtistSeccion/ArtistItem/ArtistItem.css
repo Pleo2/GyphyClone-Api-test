@@ -1,0 +1,47 @@
+.container-artist{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gif-artist {
+  cursor: pointer;
+  border-radius: 5px;
+  min-width: 20rem;
+  height: 14rem;
+}
+
+.profile-artist {
+  transform: translateY(-50%);
+  width: 80px;
+  height: 80px;
+}
+
+.info-artist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: translateY(-1rem);
+}
+
+.user-displayname{
+  margin:0;
+  font-weight: 700;
+  text-align: center;
+}
+
+.container-username{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.container-username img{
+  margin-top: 0.3rem;
+}
+
+.username-artistSeccion {
+  padding: 0;
+  margin: 0;
+}

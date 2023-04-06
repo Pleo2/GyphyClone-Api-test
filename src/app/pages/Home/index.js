@@ -6,7 +6,6 @@ import { Helmet } from 'react-helmet'
 
 export default function Home () {
   return (
-    // eslint-disable-next-line react/react-in-jsx-scope
     <>
       <Helmet>
         <title>Giphy clone Test API</title>

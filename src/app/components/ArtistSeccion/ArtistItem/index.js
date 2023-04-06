@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useCallback, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-
+import useNearScreen from 'app/hooks/useNearScreen'
+import './ArtistItem.css'
 function ArtistItem ({
   sourceMainImg,
   sourceArtistAvatar,
@@ -8,18 +9,40 @@ function ArtistItem ({
   userName,
   id
 }) {
+  const externalRef = useRef()
+  const autorImg = useRef()
+
+  const { isNearScreen } = useNearScreen({
+    distance: '50px',
+    externalRef: externalRef || null,
+    once: false
+  })
+
+  const handleImgUrl = useCallback(() => {
+    externalRef.current.src = sourceMainImg
+    autorImg.current.src = sourceArtistAvatar
+  }, [])
+
+  useEffect(() => {
+    if (isNearScreen) handleImgUrl()
+  }, [
+    isNearScreen
+  ])
+
   return (
     <div className="container-artist">
       <Link to={`/details/${id}`}>
         <img
           id={id}
-          src={sourceMainImg}
+          src={''}
           className="gif-artist"
           alt="trending-img"
+          ref={externalRef}
         />
       </Link>
       <img
-        src={sourceArtistAvatar}
+        ref={autorImg}
+        src={''}
         className="profile-artist"
         alt="profile-artist"
       />
