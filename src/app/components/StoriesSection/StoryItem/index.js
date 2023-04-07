@@ -40,7 +40,7 @@ function StoryItem ({ autor, storyImg, storyTitle, index, gifId }) {
         <img
             ref={autorImgRef}
             className="img-autor-story"
-            src={'hola'}
+            src={''}
             alt={`img autor of ${storyTitle}`}
         />
         <p className="story-title">{storyTitle}</p>

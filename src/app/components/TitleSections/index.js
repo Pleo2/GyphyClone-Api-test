@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './TitleSeccions.css'
+import './TitleSections.css'
 
-function TitleSeccions ({ pathSvg, title, toName, scroll }) {
+function TitleSections ({ pathSvg, title, toName }) {
   return (
     <>
       <div className="container--title">
@@ -30,4 +30,4 @@ function TitleSeccions ({ pathSvg, title, toName, scroll }) {
   )
 }
 
-export default React.memo(TitleSeccions)
+export default React.memo(TitleSections)

@@ -1,15 +1,15 @@
 import React, { useContext, useEffect } from 'react'
 import useGetClips from 'app/hooks/useGetClips'
 import Spiner from '../Spinner'
-import TitleSeccions from '../TitleSeccions'
-import MainClipSeccion from './MainClipSeccion'
-import RightClipsSeccion from './RightClipsSeccion'
+import TitleSections from '../TitleSections'
+import MainClipSection from './MainClipSection'
+import RightClipsSection from './RightClipsSection'
 import GifsContext from 'app/context/GifsContext'
-import './ClipsSeccion.css'
+import './ClipsSection.css'
 
 const IMAGE_AVATAR_SCALE = '/80h'
 
-function ClipsSeccion () {
+function ClipsSection () {
   const { clipsData, loading, error } = useGetClips()
   const { setState: { setClipsContext } } = useContext(GifsContext)
 
@@ -29,19 +29,19 @@ function ClipsSeccion () {
         ? <Spiner />
         : (
         <section className="container-clipsSeccion">
-          <TitleSeccions
+          <TitleSections
             pathSvg={'/clips.svg'}
             title={'Clips'}
             toName={'Clips'}
           />
           <div className="container-gifs-clipsSeccion">
-            <MainClipSeccion
+            <MainClipSection
               sourceImg={clipsData[0]?.url}
               title={clipsData[0]?.title}
               autorImg={avatarUrlMain}
               userName={clipsData[0]?.autor?.userName}
             />
-            <RightClipsSeccion
+            <RightClipsSection
               data={clipsData}
             />
               </div>
@@ -51,4 +51,4 @@ function ClipsSeccion () {
   )
 }
 
-export default React.memo(ClipsSeccion)
+export default React.memo(ClipsSection)

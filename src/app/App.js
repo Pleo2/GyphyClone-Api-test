@@ -3,10 +3,9 @@ import Header from './components/Header'
 import Home from './pages/Home/index.js'
 import SearchInput from './components/SearchInput'
 import SearchResults from './pages/SearchResults'
-import Trending from './pages/Trending'
-import Artists from './pages/Artists'
 import Clips from './pages/Clips'
 import GifsDetails from './pages/GifsDetails'
+import AllResultsMainSection from './pages/AllResultsMainSection'
 import { GifsProvider } from './context/GifsContext'
 import './App.css'
 
@@ -29,11 +28,17 @@ function App () {
               ></Route>
               <Route
                 path="/trending"
-                element={<Trending />}
+                element={<AllResultsMainSection
+                    context={'gifsTrendingContext'}
+                    name={'trending gifs'}
+                  />}
               ></Route>
               <Route
                 path="/artists"
-                element={<Artists />}
+                element={<AllResultsMainSection
+                  context={'gifsArtistsContext'}
+                  name={'artists gifs'}
+                />}
               ></Route>
               <Route
                 path="/clips"

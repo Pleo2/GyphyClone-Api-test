@@ -1,9 +1,9 @@
 import React from 'react'
-import './RightClipsSeccion.css'
+import './RightClipsSection.css'
 
 const IMAGE_AVATAR_SCALE = '/80h'
 
-function RightClipsSeccion ({ data }) {
+function RightClipsSection ({ data }) {
   const getAvatar = (clips, index) => {
     if (Array.isArray(clips)) {
       const ImgUrl = clips[index]?.autor?.autorImgUrl
@@ -67,4 +67,4 @@ function RightClipsSeccion ({ data }) {
   )
 }
 
-export default React.memo(RightClipsSeccion)
+export default React.memo(RightClipsSection)

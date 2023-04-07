@@ -4,14 +4,14 @@ import debounce from 'lodash.debounce'
 import useNearScreen from 'app/hooks/useNearScreen'
 import Spinner from '../Spinner'
 import StoryItem from './StoryItem'
-import TitleSeccions from '../TitleSeccions'
+import TitleSeccions from '../TitleSections'
 import useGetStories from 'app/hooks/useGetStories'
 import { removeDuplicatesStories } from 'app/services/utils'
-import './StoriesSeccion.css'
+import './StoriesSection.css'
 
 const IMAGE_AVATAR_SCALE = '/80h'
 
-export default function StoriesSeccion () {
+export default function StoriesSection () {
   const externalRef = useRef()
   const { stories, loading, error, setDay } = useGetStories()
   const { isNearScreen } = useNearScreen({

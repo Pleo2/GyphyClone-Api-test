@@ -1,7 +1,7 @@
 import HomePageBanner from 'app/components/HomePageBanner'
-import MainSeccion from 'app/components/MainSeccion'
-import ClipsSeccion from 'app/components/ClipsSeccion'
-import StoriesSeccion from 'app/components/StoriesSeccion'
+import MainSection from 'app/components/MainSection'
+import ClipsSection from 'app/components/ClipsSection'
+import StoriesSection from 'app/components/StoriesSection'
 import { Helmet } from 'react-helmet'
 
 export default function Home () {
@@ -11,9 +11,9 @@ export default function Home () {
         <title>Giphy clone Test API</title>
       </Helmet>
       <HomePageBanner />
-      <MainSeccion />
-      <ClipsSeccion />
-      <StoriesSeccion />
+      <MainSection />
+      <ClipsSection />
+      <StoriesSection />
     </>
   )
 }

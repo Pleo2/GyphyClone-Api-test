@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import ButtonsSliders from '../ButtonsSliders'
-import TitleSeccions from '../TitleSeccions'
+import TitleSections from '../TitleSections'
 import ArtistItem from './ArtistItem'
-import './ArtistSeccion.css'
+import './ArtistSection.css'
 
 const IMAGE_AVATAR_SCALE = '/80h'
 
@@ -11,7 +11,7 @@ export default function ArtistSeccion ({ data }) {
   return (
     <>
       <section className="container-artistSeccion">
-        <TitleSeccions
+        <TitleSections
           pathSvg={'/artists.svg'}
           title={'Artists'}
           toName={'GIPHY Artists'}
@@ -30,7 +30,6 @@ export default function ArtistSeccion ({ data }) {
           }}
         >
           {data
-            ?.slice(25, data?.length - 1)
             ?.filter(item => item?.autor?.isVerified)
             ?.map((artist, index) => {
               return (

@@ -1,7 +1,7 @@
 import React from 'react'
-import './MainClipSeccion.css'
+import './MainClipSection.css'
 
-function MainClipSeccion ({
+function MainClipSection ({
   sourceImg,
   title,
   autorImg,
@@ -31,4 +31,4 @@ function MainClipSeccion ({
   )
 }
 
-export default React.memo(MainClipSeccion)
+export default React.memo(MainClipSection)

@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import Spinner from '../Spinner'
-import TitleSeccions from '../TitleSeccions'
+import TitleSections from '../TitleSections'
 import ButtonsSliders from '../ButtonsSliders/index'
-import './TrendingSeccion.css'
+import './TrendingSection.css'
 import TrendingImg from './TrendingImg'
 
-export default function TrendingSeccion ({ data, loading, error }) {
+export default function TrendingSection ({ data, loading, error }) {
   const [sliderIndex, setSliderIndex] = useState(0)
 
   return (
@@ -14,7 +14,7 @@ export default function TrendingSeccion ({ data, loading, error }) {
         className="container-trendingSeccion"
         key={'trending-seccion'}
       >
-        <TitleSeccions
+        <TitleSections
           pathSvg={'/trending.svg'}
           title={'Trending'}
           toName={'The GIFs'}
