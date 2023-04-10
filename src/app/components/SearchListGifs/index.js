@@ -10,7 +10,6 @@ import { Helmet, HelmetProvider } from 'react-helmet-async'
 export default function SearchListGifs () {
   const { keyword } = useParams()
   const { gifs, loading, error, setPage } = useSearchGifs({ keyword })
-
   const externalRef = useRef()
   const { isNearScreen } = useNearScreen({
     externalRef: loading ? null : externalRef,

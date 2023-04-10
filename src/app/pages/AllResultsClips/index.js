@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef } from 'react'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
-import useGetAllGifsMainSeccion from 'app/hooks/useGetAllGifsMainSection'
+import useGetAllGifsCilpsSection from 'app/hooks/useGetAllGifsClipsSection'
 import useNearScreen from 'app/hooks/useNearScreen'
 import debounce from 'lodash.debounce'
 import ListOfGifs from 'app/components/ListOfGifs'
@@ -8,9 +8,8 @@ import Spinner from 'app/components/Spinner'
 import HomePageBanner from 'app/components/HomePageBanner'
 import TrendingSearchSection from 'app/components/TrendingSearchSection'
 
-export default function AllResultsMainSeccion ({ context, name }) {
-  const { gifsData, loading, error, setPageNumber } =
-    useGetAllGifsMainSeccion(context)
+export default function AllResultsMainSeccion ({ name }) {
+  const { gifsData, loading, error, setPageNumber } = useGetAllGifsCilpsSection()
   const externalRef = useRef()
 
   const { isNearScreen } = useNearScreen({
@@ -33,7 +32,7 @@ export default function AllResultsMainSeccion ({ context, name }) {
         <Helmet>
           <title>{`Giphy clone | ${name}`}</title>
         </Helmet>
-      <TrendingSearchSection />
+      <TrendingSearchSection/>
       <HomePageBanner />
       <ListOfGifs
         data={gifsData}

@@ -15,7 +15,7 @@ export default function useGetMainSection () {
       .then(gifs => {
         setGifsData(gifs)
         setTrendingContext(gifs)
-        setArtistsContext(gifs?.slice(24, gifs?.length - 1))
+        setArtistsContext(gifs?.slice(25, gifs?.length - 1))
       })
       .catch(error =>
         error.name === 'AbortError'

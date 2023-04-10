@@ -12,9 +12,9 @@ export default function MainSection () {
         : (
         <>
         <TrendingSeccion data={gifsData} />
-        <ArtistSeccion data={gifsData?.slice(24, gifsData?.length - 1)} />
+        <ArtistSeccion data={gifsData?.slice(25, gifsData?.length - 1)} />
         </>
-          ) }
+          )}
     </>
   )
 }

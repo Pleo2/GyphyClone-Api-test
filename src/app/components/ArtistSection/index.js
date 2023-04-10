@@ -44,7 +44,6 @@ export default function ArtistSeccion ({ data }) {
             })}
         </div>
       </section>
-     )
     </>
   )
 }

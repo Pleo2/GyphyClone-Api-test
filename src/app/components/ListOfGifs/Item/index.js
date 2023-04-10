@@ -7,7 +7,7 @@ function Item ({ gif, dataSrc, id }) {
   const externalRef = useRef()
 
   const { isNearScreen } = useNearScreen({
-    distance: '100px',
+    distance: '1px',
     externalRef: externalRef || null,
     once: false
   })

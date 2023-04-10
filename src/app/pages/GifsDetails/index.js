@@ -1,14 +1,14 @@
-import Spiner from 'app/components/Spiner'
+import Spinner from 'app/components/Spinner'
 import { useParams } from 'react-router-dom'
 import useGetByIdGifs from 'app/hooks/useGetByIdGifs'
-import './GifsDetail.css'
+import './GifsDetails.css'
 
 export default function GifsDetails () {
   const { GifsId } = useParams()
   const { data, loading, error } = useGetByIdGifs({ GifsId })
   return (
     <>
-      {loading && <Spiner />}
+      {loading && <Spinner />}
       {!loading && !error && (
         <div className="container-gifs-details">
           <p className="title--gifs-details">{data?.title}</p>

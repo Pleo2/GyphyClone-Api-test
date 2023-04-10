@@ -1,29 +1,31 @@
-import useFetch from './useFetch'
-import { API_URL_VIDEOS } from '../services/config'
+import { useState, useContext, useEffect } from 'react'
+import GifsContext from 'app/context/GifsContext'
+import getClips from 'app/services/getClips'
 
-export default function useGetClips () {
-  const { data, loading, error, handleCancelRequest } = useFetch(API_URL_VIDEOS)
-  const clipsData = []
+export default function useGetMainSection () {
+  const [clipsData, setCilpsData] = useState(null)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
+  const { setState: { setClipsContext } } = useContext(GifsContext)
 
-  data.map(clip => {
-    const { id, title } = clip
-    const { url } = clip?.images?.downsized_medium
-    const autor = {
-      userName: clip?.username,
-      isVerified: clip?.user?.is_verified,
-      autorImgUrl: clip?.user?.avatar_url?.slice(0, clip.user.avatar_url.length - 4),
-      typeAutorImgUrl: clip?.user?.avatar_url?.slice(
-        clip?.user?.avatar_url?.length - 4,
-        clip?.user?.avatar_url?.length
+  useEffect(() => {
+    setCilpsData(null)
+    setLoading(true)
+    getClips({ limit: 50 })
+      .then(gifs => {
+        setCilpsData(gifs?.filter(item => item?.autor?.isVerified))
+        setClipsContext(gifs?.filter(item => item?.autor?.isVerified))
+      })
+      .catch(error =>
+        error.name === 'AbortError'
+          ? console.log('cancelled request')
+          : setError(error)
       )
-    }
-
-    return clipsData.push({ title, url, autor, id })
-  })
+      .finally(setLoading(false))
+  }, [])
   return {
     clipsData,
     loading,
-    error,
-    handleCancelRequest
+    error
   }
 }

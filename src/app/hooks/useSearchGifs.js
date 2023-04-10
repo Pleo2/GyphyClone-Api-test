@@ -47,7 +47,6 @@ export default function useGetGifs ({ keyword }) {
       })
       .finally(setLoadingNextPage(false))
   }, [keyword, page])
-
   return {
     gifs,
     loading,
